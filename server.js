@@ -3,7 +3,7 @@
  * the verification process may break
  *******************************************/
 
-const bcrypt = require('bcrypt');
+const bcrypt = require("bcrypt");
 var express = require("express");
 var app = express();
 app.disable("x-powered-by");
@@ -40,12 +40,12 @@ app.get("/app-info", function (req, res) {
     .map((l) => l.name)
     // filter out express default middlewares
     .filter(
-      (n) => !(n === "query" || n === "expressInit" || n === "serveStatic")
+      (n) => !(n === "query" || n === "expressInit" || n === "serveStatic"),
     );
 
   // filter out CORS Headers
   var hs = Object.keys(res.getHeaders()).filter(
-    (h) => !h.match(/^access-control-\w+/)
+    (h) => !h.match(/^access-control-\w+/),
   );
   var hObj = {};
   hs.forEach((h) => {
