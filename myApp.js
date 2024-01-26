@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const helmet = require("helmet");
 
+app.use(helmet());
 helmet.hidePoweredBy();
 module.exports = app;
 const api = require("./server.js");
